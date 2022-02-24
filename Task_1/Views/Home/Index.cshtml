@@ -1,0 +1,24 @@
+﻿@model Task_1.ViewModels.UserViewModel
+
+@{ 
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h4 class="display-4">Welcome</h4>
+
+    <form method="post" asp-controller="Home" asp-action="EnterUsername">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div>
+            <label asp-for="Username"></label><br />
+            <input asp-for="Username" placeholder="Username" width="300" /><br />
+            <span asp-validation-for="Username" class="text-danger" style="font-size: 12px;"></span>
+        </div>
+        <div>
+            <input type="submit" value="Enter" width="200" />
+        </div>
+        <div>
+            <label>@Model.Greetings</label>
+        </div>
+    </form>
+</div>
